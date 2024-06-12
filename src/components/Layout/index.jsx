@@ -55,11 +55,11 @@ export default function Index(){
         
         
 
-      <input type="text" value={query} onChange={(e)=>{setQuery(e.target.value)}} placeholder="Search...." className="text-base md:text-sm xl:text-xl text-gray-600 font-bold mb-2  focus:outline-transparent px-4"/>
+      <input type="text" value={query} onChange={(e)=>{setQuery(e.target.value)}} placeholder="Search github users...." className="rounded-lg text-base md:text-sm xl:text-xl text-gray-600 font-bold mb-2  focus:outline-transparent px-4"/>
         
       <div>{userData.html_url}</div>
 
-        <div className="p-2 grid grid-rows-2 gap-8 overflow-y-auto  text-base md:text-sm xl:text-xl tracking-normal font-medium mt-4">
+        <div className="p-2 grid grid-rows-2 gap-8 overflow-y-auto  text-base md:text-sm xl:text-xl tracking-normal font-medium mt-4 ">
                <div>
                 <div className="px-4 grid grid-row-3 md:grid-cols-3">
                     {loading? (<div className="text-4xl ">Loading....</div>):(<img src={userData.avatar_url} alt="avatar_url" className="border rounded-full w-[100px] md:w-[150px] xl:w-[250px]"/>)}
@@ -74,7 +74,7 @@ export default function Index(){
                             <p>{userData.bio}</p>
                         </div>
                 </div>
-                    
+                
                 <div className=" p-4  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 overflow-y-auto">
                     
                     {reposData.length === 0 ? (
