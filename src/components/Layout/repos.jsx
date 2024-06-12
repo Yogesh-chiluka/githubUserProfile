@@ -2,29 +2,20 @@
 
 import axios from 'axios';
 import { useEffect,useState } from 'react';
+import { getRepos } from '../../utils/data';
+import { useLoaderData } from 'react-router-dom';
 
-const baseURL = "https://api.github.com/users/Yogesh-chiluka/repos";
-
+export const Loader = () => {
+  let fetch_data = getRepos()
+  console.log("loading data");
+  return {fetch_data}
+};
 
 export default function Repositories(){
-    const [reposData, setReposData] = useState('');
+   // const [reposData, setReposData] = useState('');
 
-    useEffect(()=>{
-            axios.get(baseURL)
-        .then(function (response) {
-            // handle success
-            setReposData(response.data);
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .finally(function () {
-            // always executed
-        });
-    },[])
+    const {reposData} = useLoaderData();
 
-    if (!reposData) return null
 
 
     return(
@@ -42,7 +33,7 @@ export default function Repositories(){
 }
 
 
-function Card({repo}){
+export function Card({repo}){
 
 
     return(
