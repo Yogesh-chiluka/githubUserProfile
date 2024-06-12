@@ -36,12 +36,12 @@ export default function Index(){
         
 
       <input type="text" value={query} onChange={(e)=>{setQuery(e.target.value)}} placeholder="Search...." className=" text-xl text-gray-600 font-bold mb-2  focus:outline-transparent px-4"/>
-
+        
       <div>{userData.html_url}</div>
         <div className="w-4/5 mx-auto p-4 grid grid-rows-2 gap-4 overflow-y-auto  text-xl tracking-normal font-medium mt-8">
                
                 <div className="px-4  grid grid-cols-2">
-                    <img src={userData.avatar_url} alt="avatar_url" className="border rounded-full w-[250px]"/>
+                    {loading? (<div className="text-4xl ">Loading....</div>):(<img src={userData.avatar_url} alt="avatar_url" className="border rounded-full w-[250px]"/>)}
                     <ul className="mt-4 ">
                         <li className="p-4">Name:{" "}{userData.name}</li>
                         <li className="p-4">Follwers: {userData.followers}</li>
@@ -59,7 +59,7 @@ export default function Index(){
         </div>
     
     <div>
-    Loading:   {loading}
+    
     </div>
     </>)
 }
