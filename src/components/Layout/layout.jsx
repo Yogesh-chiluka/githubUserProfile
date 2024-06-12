@@ -30,8 +30,8 @@ export default function Layout(){
 <div className="flex  bg-gray-700 text-white p-4 min-h-screen max-h-screen font-sans">
   <nav className=" w-1/5 bg-gray-800 text-white p-4 m-2 rounded-md">
   <img src={data.avatar_url} className=' rounded-full mx-auto w-[200px]'/>
-  <h2 className="text-lg text-center font-bold m-2 p-2">{data.name}</h2>
-    <ul className="space-y-2 text-sm">
+  <h2 className="text-sm md:text-xl text-center font-bold m-2 p-2">{data.name}</h2>
+    <ul className="space-y-2 text-xs md:text-sm">
       <li><NavLink to='/' className="block hover:bg-gray-700 p-1 rounded">Home</NavLink></li>
       <li><NavLink to='/Profile' className="block hover:bg-gray-700 p-1 rounded">Profile</NavLink></li>
       <li><NavLink to="/Repositories" className="block hover:bg-gray-700 p-1 rounded">Repositories</NavLink></li>
