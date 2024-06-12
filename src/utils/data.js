@@ -13,8 +13,8 @@ import axios from "axios";
 
 
 
-export function getRepos() {
-    return axios.get(`https://api.github.com/users/Yogesh-Chiluka/repos`)
+export function getData(data) {
+    return axios.get(data)
       .then(function (response) {
         return response.data; // <-- returned to getReasonTypes
       })
@@ -24,33 +24,3 @@ export function getRepos() {
       });
   }
 
-
-const fetchData = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(`https://api.github.com/users/${query}`);
-      setUserData(response.data);
-      console.log(response.data)
-    } catch (error) {
-      setError(error);
-
-    } finally {
-      setLoading(false);
-    }
-  };
-
-const fetchReposData = async () =>{
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(`https://api.github.com/users/${query}/repos`);
-      setReposData(response.data);
-      console.log(response.data)
-    } catch (error) {
-      setError(error);
-
-    } finally {
-      setLoading(false);
-    }
-  }

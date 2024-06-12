@@ -35,7 +35,7 @@ export default function Layout(){
       <li><NavLink to='/' className="block hover:bg-gray-700 p-1 rounded">Home</NavLink></li>
       <li><NavLink to='/Profile' className="block hover:bg-gray-700 p-1 rounded">Profile</NavLink></li>
       <li><NavLink to="/Repositories" className="block hover:bg-gray-700 p-1 rounded">Repositories</NavLink></li>
-      <li><NavLink to="/SearchedResults" className="block hover:bg-gray-700 p-1 rounded">SearchedResults</NavLink></li>
+     
 
     </ul>
   </nav>

@@ -1,28 +1,21 @@
 import React,{useEffect, useState} from "react";
-import axios from 'axios';
+import { useLoaderData } from "react-router-dom";
 
-const baseURL = "https://api.github.com/users/Yogesh-chiluka";
+import { getData } from "../../utils/data";
 
+
+export const Loader = () => {
+    let fetch_data = getData("https://api.github.com/users/Yogesh-chiluka")
+    console.log("loading data");
+    console.log(fetch_data)
+    return fetch_data
+  };
+  
 export default function Profile(){
-    const [profileData, setProfileData] = useState(null);
-    const [error, setError] = useState('')
-    useEffect(()=>{
-        axios.get(baseURL)
-    .then(function (response) {
-        // handle success
-        setProfileData(response.data);
-    })
-    .catch(function (error) {
-        // handle error
-        setError(error.message)
-    })
-    .finally(function () {
-        // always executed
-    });
-    
-},[])
 
-if (!profileData) return null
+    const profileData = useLoaderData();
+
+    console.log(profileData)
 
     return(
         <>

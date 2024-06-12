@@ -1,22 +1,22 @@
 
 
 import axios from 'axios';
-import { useEffect,useState } from 'react';
-import { getRepos } from '../../utils/data';
+import { getData } from '../../utils/data';
 import { useLoaderData } from 'react-router-dom';
 
 export const Loader = () => {
-  let fetch_data = getRepos()
+  let fetch_data = getData("https://api.github.com/users/Yogesh-Chiluka/repos")
   console.log("loading data");
-  return {fetch_data}
+  console.log(fetch_data)
+  return fetch_data
 };
 
 export default function Repositories(){
    // const [reposData, setReposData] = useState('');
 
-    const {reposData} = useLoaderData();
+    const reposData = useLoaderData();
 
-
+console.log(reposData)
 
     return(
         <>

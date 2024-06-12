@@ -12,7 +12,7 @@ import {
 import Layout from './components/Layout/layout.jsx';
 import Repositories,{Loader as ReposLoader} from './components/Layout/repos.jsx'
 import ErrorPage from './components/ErrorPages/errorpage.jsx';
-import Profile from './components/Layout/profile.jsx';
+import Profile, {Loader as ProfileLoader} from './components/Layout/profile.jsx';
 import Index from './components/Layout/index.jsx';
 
 
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
     >
       <Route index element={<Index /> } errorElement={<ErrorPage/>} />
       <Route path='/Repositories' element={<Repositories />} loader={ReposLoader} errorElement={<ErrorPage/>} />
-      <Route path='/Profile' element={<Profile />} errorElement={<ErrorPage/>} />
+      <Route path='/Profile' element={<Profile />} loader={ProfileLoader} errorElement={<ErrorPage/>} />
     </Route>
   )
 );

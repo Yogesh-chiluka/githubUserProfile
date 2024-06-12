@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Card } from "./repos";
-import { fetchData, fetchReposData } from "../../utils/data";
+
 
 export default function Index(){
 
