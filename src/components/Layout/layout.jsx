@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 import { useEffect,useState } from 'react';
-import CardsLayout from './repos';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const baseURL = "https://api.github.com/users/Yogesh-Chiluka";
@@ -36,13 +35,14 @@ export default function Layout(){
       <li><NavLink to='/' className="block hover:bg-gray-700 p-1 rounded">Home</NavLink></li>
       <li><NavLink to='/Profile' className="block hover:bg-gray-700 p-1 rounded">Profile</NavLink></li>
       <li><NavLink to="/Repositories" className="block hover:bg-gray-700 p-1 rounded">Repositories</NavLink></li>
+      <li><NavLink to="/SearchedResults" className="block hover:bg-gray-700 p-1 rounded">SearchedResults</NavLink></li>
 
     </ul>
   </nav>
 
   <main className=" w-4/5 p-4 bg-gray-800 m-2 rounded-md grid grid-cols-1 overflow-hidden text-gray-300">
 
-       
+    
     <Outlet/>
 
   </main>

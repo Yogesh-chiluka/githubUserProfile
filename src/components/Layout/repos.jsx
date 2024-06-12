@@ -7,7 +7,7 @@ const baseURL = "https://api.github.com/users/Yogesh-chiluka/repos";
 
 
 export default function Repositories(){
-    const [reposData, setReposData] = useState(null);
+    const [reposData, setReposData] = useState('');
 
     useEffect(()=>{
             axios.get(baseURL)
@@ -29,9 +29,9 @@ export default function Repositories(){
 
     return(
         <>
-  <h1 class="text-xl text-gray-200 font-bold mb-2 bg-gray-00">Repositories</h1>
+  <h1 className="text-xl text-gray-200 font-bold mb-2 bg-gray-00">Repositories</h1>
   
-        <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 overflow-y-auto ">
+        <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 overflow-y-auto">
 
             {reposData.map((repo)=>(<Card repo={repo}/>))}
      
@@ -45,11 +45,12 @@ export default function Repositories(){
 function Card({repo}){
 
 
-    return(<>
+    return(
   
       
-        <div className="w-[200px] h-[200px]  rounded-md  bg-gray-700 m-4">
-       
+        <div className="w-[200px] h-[200px]  rounded-md  bg-gray-700 m-4" key={repo.id}>
+          
+
         <div className="p-4 grid grid-rows-5 ">
           <h1 className="row-span-3 text-lg font-semibold  text-gray-200">{repo.name} 
           </h1>
@@ -65,6 +66,6 @@ function Card({repo}){
           </button></a>
         </div>
       </div>      
-    </>
+    
     )
 }

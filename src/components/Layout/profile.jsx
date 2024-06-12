@@ -5,7 +5,7 @@ const baseURL = "https://api.github.com/users/Yogesh-chiluka";
 
 export default function Profile(){
     const [profileData, setProfileData] = useState(null);
-
+    const [error, setError] = useState('')
     useEffect(()=>{
         axios.get(baseURL)
     .then(function (response) {
@@ -14,7 +14,7 @@ export default function Profile(){
     })
     .catch(function (error) {
         // handle error
-        console.log(error);
+        setError(error.message)
     })
     .finally(function () {
         // always executed
@@ -26,8 +26,8 @@ if (!profileData) return null
 
     return(
         <>
-        <h1 class=" text-xl  font-bold mb-2">Profile</h1>
-        <div class="w-4/5 mx-auto p-4 grid grid-rows-2 gap-4 overflow-y-auto  text-xl tracking-normal font-medium">
+        <h1 className=" text-xl  font-bold mb-2">Profile</h1>
+        <div className="w-4/5 mx-auto p-4 grid grid-rows-2 gap-4 overflow-y-auto  text-xl tracking-normal font-medium">
             
                 <div className="px-4  grid grid-cols-2">
 
